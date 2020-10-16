@@ -2,6 +2,7 @@
 #include "Window.h"
 #include <stdexcept>
 #include <iostream>
+#include <string>
 
 static void errorCcallback(int error, const char* description)
 {
