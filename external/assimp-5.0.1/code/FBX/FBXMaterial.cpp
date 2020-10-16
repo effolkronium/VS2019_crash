@@ -92,7 +92,10 @@ Material::Material(uint64_t id, const Element& element, const Document& doc, con
 
 
     // lower-case shading because Blender (for example) writes "Phong"
+
+
     
+
     /// !!! RARE VS2019 CRASH
 
 
@@ -102,15 +105,21 @@ Material::Material(uint64_t id, const Element& element, const Document& doc, con
     //for (auto beg = shading.begin(); beg != endd; ++beg)
     //    std::cout << *beg;
 
-    // comment cout`s to get crash inside transform
-    std::cout << &shading.begin();
-    std::cout << &shading.end();
+    // uncomment cout`s to get crash inside begin
+    /*std::cout << &shading.begin();
+    std::cout << &shading.end();*/
+
 
     // CRASH!!!
     std::transform(shading.begin(), shading.end(), shading.begin(), ::tolower);
 
     // BUT IT WORKS!!!
     //std::transform(shading.data(), shading.data()+shading.size(), shading.data(), ::tolower);
+
+
+
+
+
     if(shading == "phong") {
         templateName = "Material.FbxSurfacePhong";
     }
