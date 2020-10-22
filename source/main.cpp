@@ -1,17 +1,12 @@
-#include "RenderOpengl.h"
 #include <iostream>
-#include "Windows.h"
+#include "assimp/scene.h"
+#include "assimp/Importer.hpp"
+#include "assimp/postprocess.h"
 
 int main()
 try {
-	const char* a = "ab";
-	const char* const b = "ba";
-	a = b;
-
-	
-	RenderOpengl opengl;
-
-	opengl.startRenderLoop();
+	Assimp::Importer import;
+	const aiScene* scene = import.ReadFile("resources/Fish_fbx/fishFBX.FBX", aiProcess_Triangulate | aiProcess_FlipUVs);
 }
 catch (const std::exception& ex)
 {
