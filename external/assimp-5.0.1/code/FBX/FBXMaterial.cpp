@@ -179,7 +179,7 @@ Material::Material(uint64_t id, const Element& element, const Document& doc, con
 // ------------------------------------------------------------------------------------------------
 Material::~Material()
 {
-    std::cout << "WTF";
+
 }
 
 

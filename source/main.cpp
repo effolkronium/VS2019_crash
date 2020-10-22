@@ -7,6 +7,7 @@ int main()
 try {
 	Assimp::Importer import;
 	const aiScene* scene = import.ReadFile("resources/Fish_fbx/fishFBX.FBX", aiProcess_Triangulate | aiProcess_FlipUVs);
+    std::cout << "NO CRASH\n";
 }
 catch (const std::exception& ex)
 {
